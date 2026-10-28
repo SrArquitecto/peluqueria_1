@@ -92,12 +92,3 @@
     outline-offset: 3px;
   }
 }
-
-/* Único movimiento de la página: el arco se despliega al cargar. */
-@keyframes arco-revelar {
-  from { clip-path: inset(100% 0 0 0); }
-  to { clip-path: inset(0); }
-}
-@media (prefers-reduced-motion: no-preference) {
-  .arco { animation: arco-revelar 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
-}

@@ -18,7 +18,7 @@ const redesLista = Object.entries(redes).filter(([, url]) => url);
       {direccion && <p class="mt-4 text-lg">{direccion}</p>}
       {email && <p class="mt-1"><a class="link" href={`mailto:${email}`}>{email}</a></p>}
       <div class="mt-6 flex flex-wrap gap-3">
-        {wa && <a class="btn btn-neutral" href={wa} target="_blank" rel="noopener">WhatsApp</a>}
+        {wa && <a class="btn btn-primary" href={wa} target="_blank" rel="noopener">WhatsApp</a>}
         {mapa && <a class="btn btn-outline" href={mapa} target="_blank" rel="noopener">Cómo llegar</a>}
       </div>
       {redesLista.length > 0 && (

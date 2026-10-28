@@ -12,7 +12,7 @@ const estilo = [
   .join("; ");
 ---
 <!doctype html>
-<html lang="es" class="scroll-smooth" style={estilo || undefined} data-theme={imagen ? "peluqueria-oscuro" : undefined}>
+<html lang="es" class="scroll-smooth" style={estilo || undefined} data-theme="peluqueria-oscuro">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -25,12 +25,14 @@ const estilo = [
     <slot name="head" />
   </head>
   <body>
-    {imagen && (
+    <div class="pointer-events-none fixed inset-0 -z-20 bg-[linear-gradient(to_bottom,var(--color-base-100),color-mix(in_oklab,var(--color-primary)_15%,var(--color-base-100)))]"></div>
+    {(imagen || imagenDerecha) && (
       <>
-        <div class="pointer-events-none fixed inset-0 -z-20 bg-[linear-gradient(to_bottom,var(--color-base-100),color-mix(in_oklab,var(--color-primary)_15%,var(--color-base-100)))]"></div>
-        <img src={imagen} alt="" fetchpriority="high" class="pointer-events-none fixed inset-y-0 left-0 -z-10 h-full w-full object-cover object-top md:w-[32%] md:opacity-60 md:object-top md:[mask-image:linear-gradient(to_left,transparent,black_90%)]" />
+        {imagen && (
+          <img src={imagen} alt="" fetchpriority="high" class="pointer-events-none fixed inset-y-0 left-0 -z-10 h-full w-full object-cover object-top md:w-[32%] md:opacity-50 md:object-top md:[mask-image:linear-gradient(to_left,transparent,black_80%)]" />
+        )}
         {imagenDerecha && (
-          <img src={imagenDerecha} alt="" class="pointer-events-none fixed inset-y-0 right-0 -z-10 hidden h-full w-[32%] object-cover object-top opacity-60 md:block [mask-image:linear-gradient(to_right,transparent,black_45%)]" />
+          <img src={imagenDerecha} alt="" class:list={["pointer-events-none fixed inset-y-0 right-0 -z-10 h-full w-full object-cover object-top md:w-[32%] md:opacity-50", imagen && "hidden md:block"]} class="[mask-image:linear-gradient(to_right,transparent,black_80%)]" />
         )}
         <div class="pointer-events-none fixed inset-0 -z-10 bg-base-100/60 md:hidden"></div>
       </>

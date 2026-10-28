@@ -10,7 +10,7 @@ export const Negocio = z.strictObject({
   sobre: texto,
   colorPrincipal: z.string().regex(/^#[0-9a-fA-F]{6}$/, "formato #rrggbb"),
   colorSobrePrincipal: z.string().regex(/^#[0-9a-fA-F]{6}$/, "formato #rrggbb"),
-  imagenPortada: z.string(),
+  imagenPortada: z.string().optional(),
   imagenPortadaDerecha: z.string().optional(),
   telefono: z.string().regex(/^[\d\s+]{9,}$/, "solo dígitos, espacios o +"),
   whatsapp: z.string().regex(/^(\d{9,15})?$/, "solo dígitos con prefijo, sin +"),
