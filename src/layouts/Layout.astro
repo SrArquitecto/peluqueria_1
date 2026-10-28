@@ -1,0 +1,30 @@
+---
+import "../styles/global.css";
+
+const { titulo, descripcion, color, colorContenido } = Astro.props;
+
+// El color principal de cada cliente sustituye al del tema sin tocar el diseño.
+const estilo = [
+  color && `--color-primary: ${color}`,
+  colorContenido && `--color-primary-content: ${colorContenido}`,
+]
+  .filter(Boolean)
+  .join("; ");
+---
+<!doctype html>
+<html lang="es" class="scroll-smooth" style={estilo || undefined}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{titulo}</title>
+    <meta name="description" content={descripcion} />
+    <meta property="og:title" content={titulo} />
+    <meta property="og:description" content={descripcion} />
+    <meta property="og:type" content="website" />
+    <slot name="head" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

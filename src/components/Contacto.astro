@@ -1,0 +1,44 @@
+---
+const { telefono, whatsapp, email, direccion, mapaUrl, redes = {}, horario = [] } = Astro.props;
+const tel = telefono.replace(/[^\d+]/g, "");
+const wa = whatsapp ? `https://wa.me/${whatsapp.replace(/\D/g, "")}` : "";
+const mapa =
+  mapaUrl ||
+  (direccion
+    ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(direccion)}`
+    : "");
+const nombresRedes = { instagram: "Instagram", facebook: "Facebook", tiktok: "TikTok" };
+const redesLista = Object.entries(redes).filter(([, url]) => url);
+---
+<section id="contacto" class="scroll-mt-16 bg-base-200 py-20">
+  <div class="mx-auto grid max-w-6xl px-4 gap-12 md:grid-cols-2">
+    <div>
+      <h2 class="font-display text-4xl font-extrabold tracking-tight md:text-5xl">Reserva tu cita</h2>
+      <a href={`tel:${tel}`} class="mt-6 block font-display text-4xl font-extrabold tracking-tight transition-colors hover:text-primary md:text-5xl">{telefono}</a>
+      {direccion && <p class="mt-4 text-lg">{direccion}</p>}
+      {email && <p class="mt-1"><a class="link" href={`mailto:${email}`}>{email}</a></p>}
+      <div class="mt-6 flex flex-wrap gap-3">
+        {wa && <a class="btn btn-neutral" href={wa} target="_blank" rel="noopener">WhatsApp</a>}
+        {mapa && <a class="btn btn-outline" href={mapa} target="_blank" rel="noopener">Cómo llegar</a>}
+      </div>
+      {redesLista.length > 0 && (
+        <div class="mt-6 flex flex-wrap gap-4">
+          {redesLista.map(([nombre, url]) => (
+            <a class="link link-hover" href={url} target="_blank" rel="noopener">{nombresRedes[nombre] ?? nombre}</a>
+          ))}
+        </div>
+      )}
+    </div>
+    <div>
+      <h3 class="font-display text-2xl font-bold">Horario</h3>
+      <ul class="mt-4 divide-y divide-base-300 border-y border-base-300">
+        {horario.map((h) => (
+          <li class="flex justify-between gap-4 py-3">
+            <span>{h.dias}</span>
+            <span class="font-medium tabular-nums">{h.horas}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>

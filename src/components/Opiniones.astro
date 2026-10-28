@@ -1,0 +1,23 @@
+---
+const { opiniones = [] } = Astro.props;
+---
+{opiniones.length > 0 && (
+  <section id="opiniones" class="mx-auto max-w-6xl scroll-mt-16 px-4 py-20">
+    <h2 class="font-display text-4xl font-extrabold tracking-tight md:text-5xl">Lo que dicen de nosotros</h2>
+    <div class="mt-10 grid gap-10 md:grid-cols-3">
+      {opiniones.map((o) => (
+        <figure>
+          <blockquote class="text-xl leading-snug">“{o.texto}”</blockquote>
+          <figcaption class="mt-4 flex items-center gap-3">
+            <span class="font-medium">{o.nombre}</span>
+            <div class="rating rating-xs" role="img" aria-label={`${o.estrellas} de 5 estrellas`}>
+              {[1, 2, 3, 4, 5].map((n) => (
+                <div class="mask mask-star bg-base-content" aria-current={n === o.estrellas ? "true" : undefined}></div>
+              ))}
+            </div>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </section>
+)}

@@ -1,0 +1,66 @@
+@import "tailwindcss";
+@import "@fontsource-variable/bricolage-grotesque";
+@import "@fontsource-variable/instrument-sans";
+
+@plugin "daisyui" {
+  themes: false;
+}
+
+@plugin "daisyui/theme" {
+  name: "peluqueria";
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
+
+  --color-base-100: #fbfafc;
+  --color-base-200: #f1edf4;
+  --color-base-300: #e1d9e8;
+  --color-base-content: #1c1424;
+  --color-primary: #be185d;
+  --color-primary-content: #ffffff;
+  --color-secondary: #cfc3f0;
+  --color-secondary-content: #1c1424;
+  --color-accent: #f4c9d8;
+  --color-accent-content: #1c1424;
+  --color-neutral: #1c1424;
+  --color-neutral-content: #efe9f4;
+  --color-info: oklch(70% 0.13 235);
+  --color-info-content: oklch(20% 0.04 235);
+  --color-success: oklch(68% 0.15 150);
+  --color-success-content: oklch(20% 0.05 150);
+  --color-warning: oklch(82% 0.15 80);
+  --color-warning-content: oklch(25% 0.05 80);
+  --color-error: oklch(62% 0.2 25);
+  --color-error-content: oklch(98% 0.01 25);
+
+  --radius-selector: 1rem;
+  --radius-field: 999px;
+  --radius-box: 0.75rem;
+
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+@theme {
+  --font-display: "Bricolage Grotesque Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Instrument Sans Variable", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+  }
+}
+
+/* Único movimiento de la página: el arco se despliega al cargar. */
+@keyframes arco-revelar {
+  from { clip-path: inset(100% 0 0 0); }
+  to { clip-path: inset(0); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .arco { animation: arco-revelar 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+}

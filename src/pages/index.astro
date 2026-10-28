@@ -1,0 +1,61 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import Servicios from "../components/Servicios.astro";
+import Sobre from "../components/Sobre.astro";
+import Galeria from "../components/Galeria.astro";
+import Opiniones from "../components/Opiniones.astro";
+import Contacto from "../components/Contacto.astro";
+import Footer from "../components/Footer.astro";
+import BarraLlamar from "../components/BarraLlamar.astro";
+import datos from "../data/negocio.json";
+import { Negocio } from "../data/schema";
+
+// Si falta un campo o hay uno de más, la compilación falla aquí y no se publica una web rota.
+const negocio = Negocio.parse(datos);
+
+// Datos estructurados para que Google entienda qué es el negocio.
+const esquema = {
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  name: negocio.nombre,
+  description: negocio.descripcion,
+  telephone: negocio.telefono,
+  address: negocio.direccion,
+  sameAs: Object.values(negocio.redes ?? {}).filter(Boolean),
+};
+---
+<Layout
+  titulo={negocio.nombre}
+  descripcion={negocio.descripcion}
+  color={negocio.colorPrincipal}
+  colorContenido={negocio.colorSobrePrincipal}
+>
+  <script is:inline slot="head" type="application/ld+json" set:html={JSON.stringify(esquema)} />
+  <Navbar nombre={negocio.nombre} telefono={negocio.telefono} />
+  <main>
+    <Hero
+      nombre={negocio.nombre}
+      lema={negocio.lema}
+      telefono={negocio.telefono}
+      whatsapp={negocio.whatsapp}
+      imagen={negocio.imagenPortada}
+    />
+    <Servicios categorias={negocio.servicios} />
+    <Sobre nombre={negocio.nombre} texto={negocio.sobre} />
+    <Galeria fotos={negocio.galeria} antesDespues={negocio.antesDespues} />
+    <Opiniones opiniones={negocio.opiniones} />
+    <Contacto
+      telefono={negocio.telefono}
+      whatsapp={negocio.whatsapp}
+      email={negocio.email}
+      direccion={negocio.direccion}
+      mapaUrl={negocio.mapaUrl}
+      redes={negocio.redes}
+      horario={negocio.horario}
+    />
+  </main>
+  <Footer nombre={negocio.nombre} />
+  <BarraLlamar telefono={negocio.telefono} />
+</Layout>

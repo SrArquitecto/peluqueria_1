@@ -1,0 +1,30 @@
+---
+const { fotos = [], antesDespues = [] } = Astro.props;
+---
+{(antesDespues.length > 0 || fotos.length > 0) && (
+  <section id="galeria" class="mx-auto max-w-6xl scroll-mt-16 px-4 py-20">
+    <h2 class="font-display text-4xl font-extrabold tracking-tight md:text-5xl">Nuestro trabajo</h2>
+    {antesDespues.length > 0 && (
+      <div class="mt-10 grid gap-6 md:grid-cols-2">
+        {antesDespues.map((p) => (
+          <figure class="diff aspect-[4/3] rounded-box" tabindex="0">
+            <div class="diff-item-1" role="img" aria-label={`Antes: ${p.alt}`}>
+              <img src={p.antes} alt="" loading="lazy" />
+            </div>
+            <div class="diff-item-2" role="img" aria-label={`Después: ${p.alt}`}>
+              <img src={p.despues} alt="" loading="lazy" />
+            </div>
+            <div class="diff-resizer"></div>
+          </figure>
+        ))}
+      </div>
+    )}
+    {fotos.length > 0 && (
+      <div class="mt-6 columns-2 gap-3 md:columns-3">
+        {fotos.map((f) => (
+          <img src={f.src} alt={f.alt} loading="lazy" class="mb-3 w-full rounded-box" />
+        ))}
+      </div>
+    )}
+  </section>
+)}

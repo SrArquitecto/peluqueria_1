@@ -1,0 +1,25 @@
+---
+const { categorias } = Astro.props;
+---
+<section id="servicios" class="mx-auto max-w-6xl scroll-mt-16 px-4 py-20">
+  <h2 class="font-display text-4xl font-extrabold tracking-tight md:text-5xl">Servicios y tarifas</h2>
+  <div class="mt-10 divide-y divide-base-300 border-y border-base-300">
+    {categorias.map((c) => (
+      <div class="grid gap-4 py-8 md:grid-cols-[1fr_2fr] md:gap-12">
+        <h3 class="font-display text-2xl font-bold">{c.categoria}</h3>
+        <ul class="space-y-4">
+          {c.items.map((i) => (
+            <li>
+              <div class="flex items-end gap-3">
+                <span class="font-medium">{i.nombre}</span>
+                <span class="mb-1.5 flex-1 border-b border-dotted border-base-content/30" aria-hidden="true"></span>
+                <span class="font-semibold tabular-nums">{i.precio}</span>
+              </div>
+              {i.descripcion && <p class="mt-1 max-w-[55ch] text-sm text-base-content/70">{i.descripcion}</p>}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</section>

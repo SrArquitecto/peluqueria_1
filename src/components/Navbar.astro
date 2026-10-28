@@ -1,0 +1,24 @@
+---
+const { nombre, telefono } = Astro.props;
+const tel = telefono.replace(/[^\d+]/g, "");
+const enlaces = [
+  { href: "#servicios", texto: "Servicios" },
+  { href: "#sobre", texto: "Sobre nosotros" },
+  { href: "#contacto", texto: "Contacto" },
+];
+---
+<header class="sticky top-0 z-30 bg-base-100/90 backdrop-blur">
+  <nav class="navbar mx-auto max-w-6xl px-4" aria-label="Principal">
+    <div class="navbar-start">
+      <a href="#inicio" class="font-display text-xl font-extrabold tracking-tight">{nombre}</a>
+    </div>
+    <div class="navbar-end gap-2">
+      <ul class="menu menu-horizontal hidden sm:flex">
+        {enlaces.map((e) => (
+          <li><a href={e.href}>{e.texto}</a></li>
+        ))}
+      </ul>
+      <a href={`tel:${tel}`} class="btn btn-sm btn-neutral">Llamar</a>
+    </div>
+  </nav>
+</header>

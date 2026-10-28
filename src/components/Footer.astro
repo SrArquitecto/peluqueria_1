@@ -1,0 +1,10 @@
+---
+const { nombre } = Astro.props;
+const anio = new Date().getFullYear();
+---
+<footer class="bg-neutral pb-24 pt-12 text-neutral-content sm:pb-10">
+  <div class="mx-auto max-w-6xl px-4">
+    <p class="font-display text-3xl font-extrabold tracking-tight">{nombre}</p>
+    <p class="mt-4 text-sm opacity-70">© {anio} {nombre}. Todos los derechos reservados.</p>
+  </div>
+</footer>

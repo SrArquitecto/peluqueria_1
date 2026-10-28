@@ -1,0 +1,89 @@
+{
+  "nombre": "Peluquería Marta",
+  "lema": "Corte, color y peinados en el centro de la ciudad.",
+  "descripcion": "Peluquería en el centro: corte, color, tratamientos y peinados de novia. Pide tu cita por teléfono o WhatsApp.",
+  "sobre": "Texto de ejemplo: aquí va una presentación breve del negocio, con lo que lo hace especial y a quién atiende. Debe escribirlo o confirmarlo el cliente.",
+  "colorPrincipal": "#be185d",
+  "colorSobrePrincipal": "#ffffff",
+  "imagenPortada": "/img/portada.webp",
+  "telefono": "600 123 456",
+  "whatsapp": "34600123456",
+  "email": "",
+  "direccion": "Calle Ejemplo 12, 28001 Madrid",
+  "mapaUrl": "",
+  "redes": {
+    "instagram": "",
+    "facebook": ""
+  },
+  "horario": [
+    {
+      "dias": "Lunes a viernes",
+      "horas": "9:00 - 20:00"
+    },
+    {
+      "dias": "Sábado",
+      "horas": "9:00 - 14:00"
+    },
+    {
+      "dias": "Domingo",
+      "horas": "Cerrado"
+    }
+  ],
+  "servicios": [
+    {
+      "categoria": "Corte",
+      "items": [
+        {
+          "nombre": "Corte mujer",
+          "precio": "desde 20 €"
+        },
+        {
+          "nombre": "Corte hombre",
+          "precio": "desde 12 €"
+        },
+        {
+          "nombre": "Corte infantil",
+          "precio": "desde 10 €"
+        }
+      ]
+    },
+    {
+      "categoria": "Color",
+      "items": [
+        {
+          "nombre": "Tinte",
+          "precio": "desde 30 €"
+        },
+        {
+          "nombre": "Mechas",
+          "precio": "desde 45 €"
+        },
+        {
+          "nombre": "Balayage",
+          "precio": "desde 70 €",
+          "descripcion": "Degradado natural, sujeto a valoración previa"
+        }
+      ]
+    },
+    {
+      "categoria": "Peinado y tratamientos",
+      "items": [
+        {
+          "nombre": "Lavado y peinado",
+          "precio": "desde 15 €"
+        },
+        {
+          "nombre": "Tratamiento hidratante",
+          "precio": "desde 18 €"
+        },
+        {
+          "nombre": "Peinado de novia",
+          "precio": "Consultar"
+        }
+      ]
+    }
+  ],
+  "antesDespues": [],
+  "galeria": [],
+  "opiniones": []
+}
