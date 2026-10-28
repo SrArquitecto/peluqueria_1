@@ -27,7 +27,8 @@ const estilo = [
   <body>
     {imagen && (
       <>
-        <img src={imagen} alt="" fetchpriority="high" class="pointer-events-none fixed inset-y-0 left-0 -z-10 h-full w-full object-cover object-top md:w-[32%] md:opacity-60 md:object-top md:[mask-image:linear-gradient(to_left,transparent,black_45%)]" />
+        <div class="pointer-events-none fixed inset-0 -z-20 bg-[linear-gradient(to_bottom,var(--color-base-100),color-mix(in_oklab,var(--color-primary)_15%,var(--color-base-100)))]"></div>
+        <img src={imagen} alt="" fetchpriority="high" class="pointer-events-none fixed inset-y-0 left-0 -z-10 h-full w-full object-cover object-top md:w-[32%] md:opacity-60 md:object-top md:[mask-image:linear-gradient(to_left,transparent,black_90%)]" />
         {imagenDerecha && (
           <img src={imagenDerecha} alt="" class="pointer-events-none fixed inset-y-0 right-0 -z-10 hidden h-full w-[32%] object-cover object-top opacity-60 md:block [mask-image:linear-gradient(to_right,transparent,black_45%)]" />
         )}
