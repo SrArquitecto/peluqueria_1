@@ -34,6 +34,14 @@ export const Negocio = z.strictObject({
       }),
     )
     .min(1),
+  // Datos obligatorios del titular (LSSI-CE art. 10). Los rellena el cliente, no el agente.
+  legal: z.strictObject({
+    titular: texto,
+    nif: texto,
+    domicilio: texto,
+    email: z.email(),
+    registroMercantil: z.string().optional(),
+  }),
   antesDespues: z.array(z.strictObject({ antes: texto, despues: texto, alt: texto })),
   galeria: z.array(z.strictObject({ src: texto, alt: texto })),
   opiniones: z.array(

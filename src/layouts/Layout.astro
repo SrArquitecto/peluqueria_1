@@ -1,7 +1,7 @@
 ---
 import "../styles/global.css";
 
-const { titulo, descripcion, color, colorContenido } = Astro.props;
+const { titulo, descripcion, color, colorContenido, imagen } = Astro.props;
 
 // El color principal de cada cliente sustituye al del tema sin tocar el diseño.
 const estilo = [
@@ -12,7 +12,7 @@ const estilo = [
   .join("; ");
 ---
 <!doctype html>
-<html lang="es" class="scroll-smooth" style={estilo || undefined}>
+<html lang="es" class="scroll-smooth" style={estilo || undefined} data-theme={imagen ? "peluqueria-oscuro" : undefined}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -25,6 +25,12 @@ const estilo = [
     <slot name="head" />
   </head>
   <body>
+    {imagen && (
+      <>
+        <img src={imagen} alt="" fetchpriority="high" class="pointer-events-none fixed inset-y-0 left-0 -z-10 h-full w-full object-cover object-top md:w-[32%] md:opacity-60 md:object-top md:[mask-image:linear-gradient(to_left,transparent,black_45%)]" />
+        <div class="pointer-events-none fixed inset-0 -z-10 bg-base-100/60 md:hidden"></div>
+      </>
+    )}
     <slot />
   </body>
 </html>

@@ -44,6 +44,43 @@
   --noise: 0;
 }
 
+@plugin "daisyui/theme" {
+  name: "peluqueria-oscuro";
+  default: false;
+  prefersdark: false;
+  color-scheme: dark;
+
+  --color-base-100: #1c1424;
+  --color-base-200: #241a2e;
+  --color-base-300: #33273f;
+  --color-base-content: #efe9f4;
+  --color-primary: #be185d;
+  --color-primary-content: #ffffff;
+  --color-secondary: #cfc3f0;
+  --color-secondary-content: #1c1424;
+  --color-accent: #f4c9d8;
+  --color-accent-content: #1c1424;
+  --color-neutral: #120c19;
+  --color-neutral-content: #efe9f4;
+  --color-info: oklch(70% 0.13 235);
+  --color-info-content: oklch(20% 0.04 235);
+  --color-success: oklch(68% 0.15 150);
+  --color-success-content: oklch(20% 0.05 150);
+  --color-warning: oklch(82% 0.15 80);
+  --color-warning-content: oklch(25% 0.05 80);
+  --color-error: oklch(62% 0.2 25);
+  --color-error-content: oklch(98% 0.01 25);
+
+  --radius-selector: 1rem;
+  --radius-field: 999px;
+  --radius-box: 0.75rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
 @theme {
   --font-display: "Bricolage Grotesque Variable", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Instrument Sans Variable", ui-sans-serif, system-ui, sans-serif;

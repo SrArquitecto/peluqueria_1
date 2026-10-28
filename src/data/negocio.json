@@ -83,6 +83,13 @@
       ]
     }
   ],
+  "legal": {
+    "titular": "NOMBRE Y APELLIDOS O RAZÓN SOCIAL DEL TITULAR",
+    "nif": "NIF/CIF DEL TITULAR",
+    "domicilio": "DOMICILIO COMPLETO DEL TITULAR",
+    "email": "contacto@ejemplo.es",
+    "registroMercantil": ""
+  },
   "antesDespues": [],
   "galeria": [],
   "opiniones": []

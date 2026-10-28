@@ -1,0 +1,16 @@
+---
+import { Negocio } from "../data/schema";
+import datos from "../data/negocio.json";
+import PaginaLegal from "../components/PaginaLegal.astro";
+const n = Negocio.parse(datos);
+const l = n.legal;
+---
+<PaginaLegal titulo="Política de cookies" nombre={n.nombre}>
+  <p>Conforme al artículo 22.2 de la LSSI-CE, te informamos del uso de cookies en este sitio.</p>
+  <h2>Qué cookies usamos</h2>
+  <p>Este sitio no utiliza cookies propias ni de terceros, ni herramientas de analítica o publicidad. Por eso no se muestra un aviso de cookies.</p>
+  <h2>Enlaces externos</h2>
+  <p>Al pulsar en enlaces a WhatsApp, redes sociales o mapas, sales de este sitio y esos servicios pueden usar sus propias cookies según sus políticas.</p>
+  <h2>Cambios</h2>
+  <p>Si en el futuro se añaden cookies no técnicas, esta política se actualizará y se pedirá tu consentimiento previo.</p>
+</PaginaLegal>

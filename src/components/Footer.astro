@@ -2,9 +2,14 @@
 const { nombre } = Astro.props;
 const anio = new Date().getFullYear();
 ---
-<footer class="bg-neutral pb-24 pt-12 text-neutral-content sm:pb-10">
+<footer class="bg-neutral/85 pb-24 pt-12 text-neutral-content sm:pb-10">
   <div class="mx-auto max-w-6xl px-4">
     <p class="font-display text-3xl font-extrabold tracking-tight">{nombre}</p>
+    <nav class="mt-4 flex flex-wrap gap-x-5 gap-y-1 text-sm" aria-label="Información legal">
+      <a class="link link-hover" href="/aviso-legal">Aviso legal</a>
+      <a class="link link-hover" href="/privacidad">Privacidad</a>
+      <a class="link link-hover" href="/cookies">Cookies</a>
+    </nav>
     <p class="mt-4 text-sm opacity-70">© {anio} {nombre}. Todos los derechos reservados.</p>
   </div>
 </footer>
