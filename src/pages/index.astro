@@ -32,6 +32,7 @@ const esquema = {
   color={negocio.colorPrincipal}
   colorContenido={negocio.colorSobrePrincipal}
   imagen={negocio.imagenPortada}
+  imagenDerecha={negocio.imagenPortadaDerecha}
 >
   <script is:inline slot="head" type="application/ld+json" set:html={JSON.stringify(esquema)} />
   <Navbar nombre={negocio.nombre} telefono={negocio.telefono} />

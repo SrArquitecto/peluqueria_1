@@ -1,7 +1,7 @@
 ---
 import "../styles/global.css";
 
-const { titulo, descripcion, color, colorContenido, imagen } = Astro.props;
+const { titulo, descripcion, color, colorContenido, imagen, imagenDerecha } = Astro.props;
 
 // El color principal de cada cliente sustituye al del tema sin tocar el diseño.
 const estilo = [
@@ -28,6 +28,9 @@ const estilo = [
     {imagen && (
       <>
         <img src={imagen} alt="" fetchpriority="high" class="pointer-events-none fixed inset-y-0 left-0 -z-10 h-full w-full object-cover object-top md:w-[32%] md:opacity-60 md:object-top md:[mask-image:linear-gradient(to_left,transparent,black_45%)]" />
+        {imagenDerecha && (
+          <img src={imagenDerecha} alt="" class="pointer-events-none fixed inset-y-0 right-0 -z-10 hidden h-full w-[32%] object-cover object-top opacity-60 md:block [mask-image:linear-gradient(to_right,transparent,black_45%)]" />
+        )}
         <div class="pointer-events-none fixed inset-0 -z-10 bg-base-100/60 md:hidden"></div>
       </>
     )}
