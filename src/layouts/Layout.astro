@@ -29,10 +29,10 @@ const estilo = [
     {(imagen || imagenDerecha) && (
       <>
         {imagen && (
-          <img src={imagen} alt="" fetchpriority="high" class="pointer-events-none fixed inset-y-0 left-0 -z-10 h-full w-full object-cover object-top md:w-[32%] md:opacity-50 md:object-top md:[mask-image:linear-gradient(to_left,transparent,black_80%)]" />
+          <img src={imagen} alt="" fetchpriority="high" class="pointer-events-none fixed left-0 top-0 -z-10 h-lvh w-full object-cover object-top md:w-[32%] md:opacity-50 md:object-top md:[mask-image:linear-gradient(to_left,transparent,black_80%)]" />
         )}
         {imagenDerecha && (
-          <img src={imagenDerecha} alt="" class:list={["pointer-events-none fixed inset-y-0 right-0 -z-10 h-full w-full object-cover object-top md:w-[32%] md:opacity-50", imagen && "hidden md:block"]} class="[mask-image:linear-gradient(to_right,transparent,black_80%)]" />
+          <img src={imagenDerecha} alt="" class:list={["pointer-events-none fixed right-0 top-0 -z-10 h-lvh w-full object-cover object-top md:w-[32%] md:opacity-50", imagen && "hidden md:block"]} class="[mask-image:linear-gradient(to_right,transparent,black_80%)]" />
         )}
         <div class="pointer-events-none fixed inset-0 -z-10 bg-base-100/60 md:hidden"></div>
       </>
