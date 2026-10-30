@@ -1,0 +1,25 @@
+// Cogemos el primer elemento que viene del nodo HTTP Request (la respuesta de DeepSeek)
+const response = $input.first().json;
+
+// Extraemos el string JSON que hay dentro de choices[0].message.content
+const rawString = response.choices?.[0]?.message?.content;
+
+// Parseamos ese string para convertirlo en un objeto JSON real y limpio
+const datosWebParsed = JSON.parse(rawString);
+
+// Generamos automáticamente el slug adaptado (ej: "Peluquería Malasaña ≫ Corto y Cambio" -> "peluqueria-malasana-corto-y-cambio")
+const slug = datosWebParsed.nombre
+  .toLowerCase()
+  .normalize("NFD")
+  .replace(/[\u0300-\u036f]/g, "") // Quita tildes
+  .replace(/[^a-z0-9]/g, "-")      // Cambia espacios y caracteres especiales por guiones
+  .replace(/-+/g, "-")             // Evita guiones múltiples seguidos
+  .replace(/^-|-$/g, "");          // Quita guiones al principio o final
+
+// Devolvemos los datos estructurados
+return {
+  json: {
+    slug: slug,
+    fileContent: JSON.stringify(datosWebParsed, null, 2)
+  }
+};
