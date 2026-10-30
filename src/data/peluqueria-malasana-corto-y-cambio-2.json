@@ -1,0 +1,99 @@
+{
+  "nombre": "Peluquería Malasaña ≫ Corto y Cambio",
+  "lema": "Tu cambio de look en el corazón de Madrid",
+  "descripcion": "Peluquería en Malasaña especializada en cortes modernos, color y tratamientos capilares personalizados.",
+  "sobre": "En Corto y Cambio llevamos más de una década cuidando el cabello de los vecinos de Malasaña. Nuestro equipo de estilistas combina técnica y tendencia para ofrecerte un resultado único, adaptado a tu estilo de vida. Trabajamos con productos de alta calidad y apostamos por un trato cercano en un ambiente acogedor.",
+  "colorPrincipal": "#be185d",
+  "colorSobrePrincipal": "#ffffff",
+  "imagenPortada": "/img/portada.webp",
+  "imagenPortadaDerecha": "/img/portada2.webp",
+  "telefono": "+34 915 94 51 90",
+  "whatsapp": "+34 915 94 51 90",
+  "email": "info@cortoycambio.es",
+  "direccion": "Calle de San Andrés, 20, Centro, 28004 Madrid, España",
+  "mapaUrl": "https://maps.google.com/?q=Calle+de+San+Andrés,+20,+Centro,+28004+Madrid,+España",
+  "redes": {
+    "instagram": "https://www.instagram.com/cortoycambio",
+    "facebook": "https://www.facebook.com/cortoycambio"
+  },
+  "horario": [
+    "Lunes: 10:00–20:00",
+    "Martes: 10:00–20:00",
+    "Miércoles: 10:00–20:00",
+    "Jueves: 10:00–20:00",
+    "Viernes: 10:00–20:00",
+    "Sábado: 10:00–14:00",
+    "Domingo: Cerrado"
+  ],
+  "servicios": [
+    {
+      "categoria": "Cortes y Peinados",
+      "items": [
+        {
+          "nombre": "Corte de pelo mujer",
+          "precio": "25€"
+        },
+        {
+          "nombre": "Corte de pelo hombre",
+          "precio": "18€"
+        },
+        {
+          "nombre": "Corte infantil",
+          "precio": "12€"
+        },
+        {
+          "nombre": "Peinado para eventos",
+          "precio": "30€"
+        }
+      ]
+    },
+    {
+      "categoria": "Color",
+      "items": [
+        {
+          "nombre": "Tinte completo",
+          "precio": "45€"
+        },
+        {
+          "nombre": "Mechas o balayage",
+          "precio": "60€"
+        },
+        {
+          "nombre": "Retoque de raíces",
+          "precio": "30€"
+        },
+        {
+          "nombre": "Coloración fantasía",
+          "precio": "50€"
+        }
+      ]
+    },
+    {
+      "categoria": "Tratamientos",
+      "items": [
+        {
+          "nombre": "Hidratación profunda",
+          "precio": "20€"
+        },
+        {
+          "nombre": "Keratina",
+          "precio": "70€"
+        },
+        {
+          "nombre": "Botox capilar",
+          "precio": "40€"
+        }
+      ]
+    }
+  ],
+  "legal": {
+    "titular": "Corto y Cambio S.L.",
+    "nif": "B12345678",
+    "domicilio": "Calle de San Andrés, 20, 28004 Madrid, España",
+    "email": "legal@cortoycambio.es",
+    "registroMercantil": "Registro Mercantil de Madrid, Tomo 12345, Folio 67, Sección 8, Hoja M-123456"
+  },
+  "antesDespues": [],
+  "galeria": [],
+  "opiniones": []
+}
