@@ -8,7 +8,7 @@
   "imagenPortada": "/img/portada.webp",
   "imagenPortadaDerecha": "/img/portada2.webp",
   "telefono": "+34 915 94 51 90",
-  "whatsapp": "+34 915 94 51 90",
+  "whatsapp": "34915945190",
   "email": "info@cortoycambio.es",
   "direccion": "Calle de San Andrés, 20, Centro, 28004 Madrid, España",
   "mapaUrl": "https://maps.google.com/?q=Calle+de+San+Andrés,+20,+Centro,+28004+Madrid,+España",
@@ -17,13 +17,13 @@
     "facebook": "https://www.facebook.com/cortoycambio"
   },
   "horario": [
-    "Lunes: 10:00–20:00",
-    "Martes: 10:00–20:00",
-    "Miércoles: 10:00–20:00",
-    "Jueves: 10:00–20:00",
-    "Viernes: 10:00–20:00",
-    "Sábado: 10:00–14:00",
-    "Domingo: Cerrado"
+    { "dias": "Lunes", "horas": "10:00–20:00" },
+    { "dias": "Martes", "horas": "10:00–20:00" },
+    { "dias": "Miércoles", "horas": "10:00–20:00" },
+    { "dias": "Jueves", "horas": "10:00–20:00" },
+    { "dias": "Viernes", "horas": "10:00–20:00" },
+    { "dias": "Sábado", "horas": "10:00–14:00" },
+    { "dias": "Domingo", "horas": "Cerrado" }
   ],
   "servicios": [
     {
